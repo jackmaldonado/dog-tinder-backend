@@ -20,6 +20,15 @@ class DogsController < ApplicationController
         # respond with our new dog
 
     end
+    def show
+        @dog = Dog.find(params[:id])
+    end
+
+    def destroy
+    @dog = Dog.find(params[:id])
+    @dog.destroy
+    render json: @dogs
+    end
 
     private
 
